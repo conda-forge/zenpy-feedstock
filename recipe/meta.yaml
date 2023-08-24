@@ -40,6 +40,8 @@ about:
   summary: Python wrapper for the Zendesk API
   license: GPL-3.0-only
   license_file: LICENSE
+  doc_url: http://docs.facetoe.com.au/
+  dev_url: https://github.com/facetoe/zenpy
 
 extra:
   recipe-maintainers:
