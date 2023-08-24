@@ -1,5 +1,5 @@
 {% set name = "zenpy" %}
-{% set version = "2.0.30" %}
+{% set version = "2.0.31" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/zenpy-{{ version }}.tar.gz
-  sha256: f425d3c430f38a8c46079e3a1d1c1c705ed5e7dda5cfeabe878a041b89b4e56d
+  sha256: 304feb78189308f5feee33432771f5630ee44afebe5347f0b20a9d7cc2a6a006
 
 build:
   noarch: python
@@ -40,6 +40,8 @@ about:
   summary: Python wrapper for the Zendesk API
   license: GPL-3.0-only
   license_file: LICENSE
+  doc_url: http://docs.facetoe.com.au/
+  dev_url: https://github.com/facetoe/zenpy
 
 extra:
   recipe-maintainers:

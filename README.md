@@ -9,6 +9,10 @@ Package license: GPL-3.0-only
 
 Summary: Python wrapper for the Zendesk API
 
+Development: https://github.com/facetoe/zenpy
+
+Documentation: http://docs.facetoe.com.au/
+
 Current build status
 ====================
 
