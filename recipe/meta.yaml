@@ -1,5 +1,5 @@
 {% set name = "zenpy" %}
-{% set version = "2.0.51" %}
+{% set version = "2.0.52" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/zenpy-{{ version }}.tar.gz
-  sha256: 6e0f6c8ce53d1b6b46508f75c0f4e75032d7b4649e76dfbda17cd78ed92ecfc2
+  sha256: 3e0272a168b9f6347db58f60136beac9c1638784f4f96d39e63c22967274b52c
 
 build:
   noarch: python
