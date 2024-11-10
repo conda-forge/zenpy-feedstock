@@ -1,13 +1,13 @@
 {% set name = "zenpy" %}
-{% set version = "2.0.54" %}
+{% set version = "2.0.55" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/zenpy-{{ version }}.tar.gz
-  sha256: 59dd452fe11fe7d9616b8b8d025eec9fb0f9f98fdb6421508a1cd190856b4854
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/zenpy-{{ version }}.tar.gz
+  sha256: 7e3fc0eb97478962c28327f764d3ed36b58615b6ac389a71fa13cbf0cbc10496
 
 build:
   noarch: python
@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - requests >=2.14.2
     - python-dateutil >=2.7.5
     - cachetools >=3.1.0
@@ -33,6 +33,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
