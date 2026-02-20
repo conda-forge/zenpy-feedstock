@@ -1,0 +1,55 @@
+schema_version: 1
+
+context:
+  name: zenpy
+  version: 2.0.57
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/zenpy-${{ version }}.tar.gz
+  sha256: f70f8c06fe018fdcebbf32419dbfdb9d577596b13bcb1bcfe398749dcaa099bf
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - requests >=2.14.2
+    - python-dateutil >=2.7.5
+    - cachetools >=3.1.0
+    - pytz >=2018.9
+    - six >=1.14.0
+
+tests:
+  - python:
+      imports:
+        - zenpy
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pip
+    script:
+      - pip check
+
+about:
+  summary: Python wrapper for the Zendesk API
+  license: GPL-3.0-only
+  license_file: LICENSE
+  homepage: https://github.com/facetoe/zenpy
+  repository: https://github.com/facetoe/zenpy
+  documentation: http://docs.facetoe.com.au/
+
+extra:
+  recipe-maintainers:
+    - xylar
