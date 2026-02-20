@@ -34,13 +34,8 @@ tests:
   - python:
       imports:
         - zenpy
+      pip_check: true
       python_version: ${{ python_min }}.*
-  - requirements:
-      run:
-        - python ${{ python_min }}.*
-        - pip
-    script:
-      - pip check
 
 about:
   summary: Python wrapper for the Zendesk API
